@@ -1,66 +1,73 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  position: relative;
+
+  width:100%;
+  max-width: 500px;
+  height: fit-content;
+
+  background: var(--background);
+
+  border-radius: 20px;
+
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.closeButton {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  border: 0;
+  background: transparent;
+
+  transition: filter 0.1s;
+  z-index: 1600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.closeButton:hover {
+  filter: brightness(0.2)
+}
+
+form {
+  margin: 2rem 0 1rem;
+}
+
+input {
+  background: var(--white);
   
-    padding: 1.75rem;
+  border: none;
+  border-radius: 10px;
   
-    border-radius: 20px;
-  
-    box-shadow: 0px 4px 60px rgba(4, 6, 15, 0.05);
-  
-    background: var(--white);
-  }
-  
-  .input {
-    width: 18px;
-    height: 18px;
-  
-    margin-right: 1em;
-  
-    cursor: pointer;
-  
-    transition: box-shadow 0.2s;
-  }
-  .input:hover {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 15px;
-  }
-  
-  label {
-    flex: 1;
-  }
-  label.completed {
-    text-decoration: line-through;
-    color: var(--grey-500);
-  }
-  
-  .title {
-    font-size: 1.25rem;
-  }
-  
-  .buttonsWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .button {
-    background: none;
-    border: none;
-  
-    border-radius: 10px;
-  
-    padding: 0.5rem;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    transition: background-color 0.2s, color 0.2s;
-  
-    cursor: pointer;
-  }
-  .button:hover {
-    background-color: var(--background);
-    color: var(--red-500);
-  }
+  margin-top: 0.25rem;
+  padding: 0.5rem 1rem;
+
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+
+  margin-top: 1rem;
+
+  background: var(--blue-500);
+
+  color: var(--white);
+  font-weight: 700;
+
+  border: none;
+  border-radius: 100px;
+
+  padding: 0.75rem 2rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+.button:hover {
+  background: var(--blue-300);
+}

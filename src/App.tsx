@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState , useEffect} from 'react'
 import {Task} from './components/Task/index'
 import { Plus } from "react-feather"
  
@@ -59,6 +59,13 @@ function App() {
   function handleRequestCloseCreateTaskModal() {
     setIsCreateTaskModalOpen(false);
   }
+  //persistir as taks no localStorage
+  //mopnitora o tasks
+        useEffect(()=>
+        {
+          localStorage.setItem("tasks",JSON.stringify(tasks))
+        },[tasks])
+
 
   return (
     <div className="App">
@@ -86,6 +93,8 @@ function App() {
       <CreateTaskModal
         isOpen={isCreateTaskModalOpen}
         onRequestClose={handleRequestCloseCreateTaskModal}
+        tasks = {tasks}
+        setTasks={setTasks}
       />
     </div>
   );
